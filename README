@@ -1,24 +1,30 @@
-* kmail-mailbox2claws-mail.pl
+#kmail-mailbox2claws-mail.pl
 
   WHAT IT DOES
+	
 	This perl script converts a kmail mailbox into a Claws Mail mailbox.
   
   HOW TO USE IT
   
   	Exit Claws Mail if running.
 	
-	Run the script using:
-	 
-    		kmail-mailbox2claws-mail.pl --kmaildir=/full/path/to/kmail/mailbox
-		
+	Run the (made executable) script using:
+		kmail-mailbox2claws-mail.pl --kmaildir=/full/path/to/kmail/mailbox
+	where "/full/path/to/kmail/mailbox" is the topmost kmail folder.
+	In my case there were two locations:
+		$ENV{HOME}/.local/share/local-mail
+	and
+		$ENV{HOME}/.local/share/akonadi/file_db_data
+	, so I had to run the tool twice.
+	
 	Start Claws Mail and right-click the toplevel mailbox, i.e
-	"Mailbox (MH)", and select 'Rebuild folder tree'.
-	You may also need to run '/File/Folder/Check for new messages
-	in all folders'
+	"Mailbox (MH)", and select "Rebuild folder tree"; if necessary, also
+	select "Check for new messages" and "Check for new folders".
 	
 	Additional options:
 		--debug		debug mode
 		--dry-run	test mode, nothing is actually written
 		--help		brief usage info
 	
-  Contact: Paul Mangan <paul@claws-mail.org>
+Original contact: Paul Mangan <paul@claws-mail.org>
+Contact for this fork: Dan <5472qaywsx@gmail.com>
